@@ -1,21 +1,16 @@
 "use client"
 
 import Link from "next/link"
-import dynamic from "next/dynamic"
+import { GLWrapper } from "./gl-wrapper"
 import { Pill } from "./pill"
 import { Button } from "./ui/button"
 import { useState } from "react"
-
-const GL = dynamic(() => import("./gl").then(mod => ({ default: mod.GL })), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-black" />
-})
 
 export function Hero() {
   const [hovering, setHovering] = useState(false)
   return (
     <div className="flex flex-col h-svh justify-between pt-24">
-      <GL hovering={hovering} />
+      <GLWrapper hovering={hovering} />
 
       <div className="pb-16 mt-auto text-center relative z-10">
         <Pill className="mb-6">SOLUÇÕES DIGITAIS</Pill>
