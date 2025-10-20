@@ -1,37 +1,11 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-
-const Canvas = dynamic(() => import('@react-three/fiber').then(mod => ({ default: mod.Canvas })), { ssr: false })
-const Effects = dynamic(() => import('@react-three/drei').then(mod => ({ default: mod.Effects })), { ssr: false })
-const Particles = dynamic(() => import('./particles').then(mod => ({ default: mod.Particles })), { ssr: false })
-
-let useControls: any
-let VignetteShader: any
-
-try {
-  useControls = require('leva').useControls
-  VignetteShader = require('./shaders/vignetteShader').VignetteShader
-} catch {
-  useControls = () => ({
-    speed: 1.0,
-    focus: 3.8,
-    aperture: 1.79,
-    size: 512,
-    noiseScale: 0.6,
-    noiseIntensity: 0.52,
-    timeScale: 1,
-    pointSize: 10.0,
-    opacity: 0.8,
-    planeScale: 10.0,
-    vignetteDarkness: 1.5,
-    vignetteOffset: 0.4,
-    useManualTime: false,
-    manualTime: 0,
-  })
-  VignetteShader = { vertex: '', fragment: '' }
-}
+import { Perf } from "r3f-perf";
+import { Effects } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { useControls } from "leva";
+import { Particles } from "./particles";
+import { VignetteShader } from "./shaders/vignetteShader";
 
 export const GL = ({ hovering }: { hovering: boolean }) => {
   const {
