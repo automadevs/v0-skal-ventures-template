@@ -10,7 +10,7 @@ export const Header = () => {
           <Logo className="w-[100px] md:w-[120px] text-primary" />
         </Link>
         <nav className="flex max-lg:hidden absolute left-1/2 -translate-x-1/2 items-center justify-center gap-x-8">
-          {["Soluções", "Sobre", "ENTRE EM CONTATO"].map((item) => (
+          {["Sobre", "Soluções", "Projetos", "ENTRE EM CONTATO"].map((item) => (
             <Link
               className="text-sm font-medium text-foreground/70 hover:text-primary duration-150 transition-colors ease-out"
               href={item === "ENTRE EM CONTATO" ? "https://wa.me/5538998056501" : `#${item.toLowerCase()}`}
