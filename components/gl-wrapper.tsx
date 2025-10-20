@@ -1,11 +1,7 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-
-const GLComponent = dynamic(() => import('./gl').then(mod => ({ default: mod.GL })), {
-  ssr: false,
-})
+import { GL } from './gl'
 
 export function GLWrapper({ hovering }: { hovering: boolean }) {
-  return <GLComponent hovering={hovering} />
+  return <GL hovering={hovering} />
 }
