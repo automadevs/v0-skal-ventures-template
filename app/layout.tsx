@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/header";
 
@@ -10,8 +9,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Skal Ventures",
-  description: "Investment strategies that outperform the market",
+  title: "Automa — Automação e Desenvolvimento Inteligente",
+  description: "Automatizamos processos, criamos sistemas e desenvolvemos soluções digitais para criadores e empresas. A gente cuida do sistema, você foca no que importa.",
     generator: 'v0.app'
 };
 

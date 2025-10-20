@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { GL } from "./gl"
+import { GLWrapper } from "./gl-wrapper"
 import { Pill } from "./pill"
 import { Button } from "./ui/button"
 import { useState } from "react"
@@ -10,16 +10,16 @@ export function Hero() {
   const [hovering, setHovering] = useState(false)
   return (
     <div className="flex flex-col h-svh justify-between pt-24">
-      <GL hovering={hovering} />
+      <GLWrapper hovering={hovering} />
 
       <div className="pb-16 mt-auto text-center relative z-10">
-        <Pill className="mb-6">AUTOMATION SOLUTIONS</Pill>
+        <Pill className="mb-6">SOLUÇÕES DIGITAIS</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient text-foreground">
-          A gente cuida do <br />
-          <i className="font-light text-primary">sistema</i>
+          Transformamos ideias em <br />
+          <i className="font-light text-primary">sistemas que trabalham</i>
         </h1>
-        <p className="font-sans text-sm sm:text-base text-balance mt-8 max-w-[500px] mx-auto text-[rgba(235,229,229,1)]">
-          você foca no que importa
+        <p className="font-sans text-sm sm:text-base text-balance mt-8 max-w-[600px] mx-auto text-[rgba(235,229,229,1)]">
+          Soluções digitais, automações e sistemas feitos sob medida para criadores e empresas que querem ir além.
         </p>
 
         <Link
@@ -29,7 +29,7 @@ export function Hero() {
           rel="noopener noreferrer"
         >
           <Button className="mt-14" onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
-            [ENTRE EM CONTATO]
+            [FALAR COM A AUTOMA]
           </Button>
         </Link>
         <Link
@@ -44,7 +44,7 @@ export function Hero() {
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
           >
-            [ENTRE EM CONTATO]
+            [FALAR COM A AUTOMA]
           </Button>
         </Link>
       </div>
